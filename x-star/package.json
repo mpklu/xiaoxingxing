@@ -3,12 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.6.1",
+    "@material-ui/icons": "^4.5.1",
+    "@material-ui/lab": "^4.0.0-alpha.32",
+    "@material-ui/styles": "^4.6.0",
     "mobx": "^5.14.2",
     "mobx-react": "^6.1.4",
     "mobx-state-tree": "^3.14.1",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
-    "react-scripts": "3.2.0"
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "^3.3.0",
+    "typescript": "^3.7.3"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -33,5 +39,36 @@
   },
   "devDependencies": {
     "json-server": "^0.15.1"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/models/**",
+      "src/utils/**",
+      "!**/__snapshots__/**"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 50,
+        "functions": 50,
+        "lines": 50,
+        "statements": 50
+      },
+      "./src/models/": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      },
+      "./src/utils/": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    },
+    "coverageReporters": [
+      "text",
+      "lcov"
+    ]
   }
 }
